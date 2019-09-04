@@ -42,15 +42,21 @@
   <div id="homepage" class="homepage-content">
     <div class="homepage-content-inner">
 
-      <div class="homepage__ready-container">
-        <h2 class="homepage__ready-heading govuk-heading-m"><%= I18n.t("homepage.get_ready") %></h2>
-        <p class="homepage__ready-desc"><%= I18n.t("homepage.uk_leave_eu") %>.</p>
-        <div class="homepage__ready">
-          <div class="homepage__ready-text">
-            <a href="/get-ready-brexit-check" class="homepage__ready-link" data-module="track-click" data-track-category="startButtonClicked" data-track-action="/get-ready-brexit-check" data-track-label="Check what you need to do">Check what you need to&nbsp;do</a>
-          </div>
+      <div class="homepage__ready govuk-grid-row">
+        <div class="homepage__ready-container">
+          <h2 class="homepage__ready-heading govuk-heading-m"><%= I18n.t("homepage.get_ready") %></h2>
+          <p class="homepage__ready-desc"><%= I18n.t("homepage.uk_leave_eu") %>.</p>
+
+          <%= render "govuk_publishing_components/components/chevron_banner", {
+            href: "/get-ready-brexit-check",
+            text: "Check what you need to do",
+            data_attributes: {
+              track_category: "startButtonClicked",
+              track_acion: "/get-ready-brexit-check",
+              track_label: "Check what you need to do"
+            }
+          } %>
         </div>
-        <hr class="homepage__ready-section-break govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </div>
 
       <section class="services-block" aria-labelledby="services-and-information-label" id="services-and-information">
